@@ -15,8 +15,8 @@
 // @import "code";
 @import "grid";
 // @import "tables";
-// @import "forms";
-// @import "buttons";
+@import "forms";
+@import "buttons";
 @import "transitions";
 // @import "dropdown";
 // @import "button-group";
@@ -35,7 +35,7 @@
 // @import "list-group";
 // @import "close";
 // @import "toasts";
-// @import "modal";
+@import "modal";
 // @import "tooltip";
 // @import "popover";
 // @import "carousel";
