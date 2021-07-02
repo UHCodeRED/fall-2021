@@ -54,17 +54,17 @@ function hasLowVariety(options) {
 }
 
 function getOptions() {
-  const segments = getRandomArbitrary(100, 200);
+  const segments = 169.8290;
   const perlinPasses = 1;
   // const perlinPasses =
   //   segments < 150 ? 1 : Math.round(getRandomArbitrary(1, 2));
 
   const options = {
-    elevation: getRandomArbitrary(-1, 2),
-    noise_range: getRandomArbitrary(-3.5, 3.5),
-    sombrero_amplitude: getRandomArbitrary(),
-    sombrero_frequency: getRandomArbitrary(10, 20),
-    speed: getRandomArbitrary(0.25, 0.35),
+    elevation: 0.7642,
+    noise_range: -1.8151,
+    sombrero_amplitude: 0.0815,
+    sombrero_frequency: 17.5838,
+    speed: 0.3,
     segments,
     wireframe_color: "#888",
     perlin_passes: perlinPasses,
