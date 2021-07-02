@@ -59,7 +59,7 @@ img {
 .top-gradient {
   width: 100%;
   height: 8rem;
-  z-index: 0;
+  z-index: -1;
 }
 
 .gradient {
@@ -74,7 +74,7 @@ img {
     rgba(0, 0, 0, 0.5) 50%,
     rgba(0, 0, 0, 0) 100%
   );
-  z-index: 1;
+  z-index: -1;
 }
 
 .top-gradient {
@@ -83,7 +83,7 @@ img {
 }
 
 .background {
-  z-index: -1;
+  z-index: -2;
   overflow: hidden;
 }
 
@@ -203,7 +203,8 @@ img {
   }
 }
 
-#walkinModal {
+#walkinModal,
+#regModal {
   background: rgba(255, 255, 255, 0.5);
   overflow-y: scroll;
   .modal-dialog {
@@ -429,6 +430,10 @@ img {
       text-transform: uppercase;
       letter-spacing: 0.25rem;
 
+      img {
+        max-width: 100%;
+      }
+
       .nls {
         margin-right: -0.25rem;
       }
@@ -500,8 +505,8 @@ img {
       left: 0;
       right: 0;
       bottom: 0;
-      opacity: 0.375;
-      z-index: -1;
+      opacity: 0.23;
+      z-index: 0;
     }
   }
 }
@@ -517,6 +522,11 @@ footer {
 
   .footer-content {
     z-index: 2;
+  }
+
+  a, a:hover, a:focus {
+    color: #fff;
+    text-decoration: none;
   }
 }
 
@@ -568,22 +578,71 @@ footer {
   font-size: 18px;
 }
 
-.team-image {
-  width: 180px;
-  height: auto;
-}
 
-.team-member {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.team-member-title {
-  font-size: 15px;
-}
 
 .center-contet {
   text-align: center;
   margin: auto;
+}
+
+.team-members {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 30px;
+
+  .team-member {
+    padding: 10px;
+    background: #212121;
+    border-radius: 5px;
+    position: relative;
+
+    &:hover {
+      .team-image {
+        transform: rotate(10deg) translate(35px, 15px);
+      }
+    }
+  }
+
+  .team-image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: transform 0.5s ease;
+    position: relative;
+    z-index: 2;
+  }
+
+  .person-name {
+    font-weight: 500;
+  }
+  
+  .team-member-title {
+    font-size: 15px;
+  }
+
+  a {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+
+    img {
+      width: 25px;
+      height: 25px;
+    }
+  }
+}
+
+
+@media (max-width: 991px) {
+  .team-members {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .team-members {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
 }
