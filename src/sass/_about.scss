@@ -1,0 +1,10 @@
+#about {
+  #album-cover {
+    // hack to maintain aspect ratio on safari
+    height: calc(60rem / 3.8343558282);
+
+    @media screen and (max-width: 60rem) {
+      height: calc(100vw / 3.8343558282);
+    }
+  }
+}

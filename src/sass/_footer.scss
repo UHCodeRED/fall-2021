@@ -1,0 +1,14 @@
+footer {
+  .background {
+    height: 20rem;
+  }
+
+  .footer-content {
+    z-index: 2;
+  }
+
+  a, a:hover, a:focus {
+    color: #fff;
+    text-decoration: none;
+  }
+}

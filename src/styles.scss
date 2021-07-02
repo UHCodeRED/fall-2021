@@ -1,10 +1,21 @@
-@import "./scss/functions";
-@import "./scss/variables";
-@import "./scss/mixins";
-@import "./scss/modal";
-@import "./scss/forms";
-@import "./scss/buttons";
+@import "./bootstrap/bootstrap";
 
+@import "./sass/header";
+@import "./sass/footer";
+
+@import "./sass/about";
+@import "./sass/sponsors";
+@import "./sass/team";
+@import "./sass/partner";
+
+/* 
+* - Base Styles
+* - Arrow Button
+* - Collapsible
+*/
+
+
+/** BASE STYLES **/
 *,
 *::before,
 *::after {
@@ -43,57 +54,13 @@ img {
   padding: 0 2rem !important;
 }
 
-.gradient,
-.middle-gradient,
-.top-gradient,
-.background {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  pointer-events: none;
-}
-
-.gradient,
-.top-gradient {
-  width: 100%;
-  height: 8rem;
-  z-index: 0;
-}
-
-.gradient {
-  top: auto;
-  background: linear-gradient(to bottom, transparent 0%, black 100%);
-}
-
-.middle-gradient {
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 0.5) 50%,
-    rgba(0, 0, 0, 0) 100%
-  );
-  z-index: 1;
-}
-
-.top-gradient {
-  bottom: auto;
-  background: linear-gradient(to top, transparent 0%, black 100%);
-}
-
-.background {
-  z-index: -1;
-  overflow: hidden;
-}
-
 .pad-com {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
-// Hack to remove letter spacing on last letter
-// Most browsers do not follow the CSS spec for this
 
+
+/** Arrow Button **/
 .arrow-btn {
   display: inline-block;
   position: relative;
@@ -203,324 +170,8 @@ img {
   }
 }
 
-#walkinModal {
-  background: rgba(255, 255, 255, 0.5);
-  overflow-y: scroll;
-  .modal-dialog {
-    .modal-content {
-      background-color: rgb(0, 0, 0);
-      padding: 10px 10px 10px 10px;
-      border: none;
-      border-radius: 0;
-      .modal-header {
-        border-bottom: none;
-        display: flex;
-        .modal-title {
-          text-transform: uppercase;
-          font-weight: lighter;
-          letter-spacing: 2px;
-          text-align: center;
-          flex: 1;
-          .modal-sub-title {
-            font-size: 13px;
-          }
-        }
-        .close-x {
-          font-size: 1.5rem;
-        }
-        .close-x:hover {
-          color: rgba(255, 255, 255, 0.5);
-          cursor: pointer;
-        }
-      }
-      .modal-body {
-        .tab {
-          display: none;
-        }
-        .resumeName {
-          font-size: 0.85rem;
-        }
-      }
-      .modal-footer {
-        border-top: none;
-        padding-top: 0;
-        .btn {
-          background: rgb(0, 0, 0);
-          border: 1px solid rgb(255, 255, 255, 0.5);
-          border-radius: 0;
-          font-size: 16px;
-          color: rgb(255, 255, 255, 0.5);
-        }
-        .btn:hover {
-          color: rgb(0, 0, 0);
-          background: rgb(255, 255, 255);
-        }
-        .btn:focus {
-          box-shadow: none;
-        }
-        #submitBtn {
-          display: none;
-        }
-      }
-    }
-  }
-}
-#regForm {
-  .form-group {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    .form-control {
-      // height: 50px;
-      padding: 10px 0px 0px 0px;
-      font-size: 18px;
-      background: rgb(0, 0, 0);
-      border: none;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-      border-radius: 0;
-      transition: 0.3s ease-in-out;
-      color: rgba(255, 255, 255, 1);
-      width: 100%;
-      font-weight: lighter;
-      // padding: 0;
-      order: 1;
-    }
-    .form-control:focus {
-      outline: none;
-      box-shadow: none;
-      border-bottom: 1px solid rgb(255, 255, 255);
-    }
-    .label {
-      position: absolute;
-      top: -15px;
-      order: 0;
-      color: rgba(255, 255, 255, 0.5);
-      text-transform: uppercase;
-      transition: 0.3s ease;
-      font-size: 15px;
-      letter-spacing: 1px;
-      margin: 0;
-    }
-    .errorMessage {
-      padding-top: 5px;
-      order: 5;
-      font-size: 15px;
-      color: red;
-      display: none;
-    }
-    .form-control:focus + .label,
-    .form-control:valid + .label {
-      color: rgb(255, 255, 255);
-    }
-    .form-control:not(:focus) + .label {
-      color: rgba(255, 255, 255, 0.5);
-    }
-    .form-control.select {
-      color: rgba(255, 255, 255, 0.5);
-    }
-    .form-control.select .default {
-      color: rgb(255, 255, 255);
-    }
-    .form-control.select .valid-answer {
-      color: rgb(255, 255, 255);
-      font-weight: lighter;
-    }
-    .question {
-      text-transform: uppercase;
-      font-size: 16px;
-      letter-spacing: 1px;
-      margin-bottom: 0;
-    }
-    .form-check {
-      .form-check-input {
-        opacity: 0;
-      }
-      .form-check-label {
-        color: rgba(255, 255, 255, 0.5);
-        font-size: 15px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-      }
-      .form-check-label:hover {
-        cursor: pointer;
-        color: rgb(255, 255, 255);
-      }
-      .form-check-input:checked + .form-check-label {
-        color: rgb(255, 255, 255);
-      }
-      .form-check-other-text {
-        display: none;
-        border: 0;
-        border-bottom: 1px solid rgb(255, 255, 255);
-        background: rgb(0, 0, 0);
-        color: rgb(255, 255, 255);
-        font-weight: lighter;
-        font-size: 15px;
-      }
-      .form-check-other-text:focus {
-        box-shadow: none;
-        outline: none;
-      }
-    }
-    input[type="file"] {
-      display: none;
-    }
-    .upload-file {
-      font-size: 10px;
-      padding: 3px 6px;
-      cursor: pointer;
-      border: 1px solid rgba(255, 255, 255, 0.5);
-      color: rgba(255, 255, 255, 0.5);
-      font-weight: lighter;
-    }
-    .upload-file:hover {
-      color: rgb(0, 0, 0);
-      background: rgb(255, 255, 255);
-    }
-  }
-}
 
-#confirm {
-  display: none;
-  background-color: #000000;
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  position: absolute;
-  width: 300px;
-  height: 70px;
-  top: 2%;
-  left: 50%;
-  box-sizing: border-box;
-  text-align: center;
-  z-index: 100;
-  transform: translate(-50%, -50%);
-  animation: fadeOut 2s;
-  animation-delay: 2s;
-
-  @keyframes fadeOut {
-    from {
-      opacity: 1;
-    }
-    to {
-      opacity: 0;
-    }
-  }
-}
-
-#landing {
-  height: 50rem;
-  max-height: 100vh;
-  width: 100%;
-
-  .landing-content {
-    display: flex;
-    height: 100%;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    z-index: 100;
-
-    .event-info {
-      flex: 1;
-      padding: 1rem;
-      width: 100%;
-      max-width: 24rem;
-      text-transform: uppercase;
-      letter-spacing: 0.25rem;
-
-      .nls {
-        margin-right: -0.25rem;
-      }
-
-      .coming-soon {
-        padding: 1rem 2rem;
-        background-color: rgba(255, 255, 255, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.5);
-        color: white;
-        font-size: 1.5rem;
-        letter-spacing: 0.35rem;
-        line-height: 1.2;
-        text-align: center;
-
-        .nls {
-          margin-right: -0.35rem;
-        }
-      }
-    }
-  }
-}
-
-#about {
-  #album-cover {
-    // hack to maintain aspect ratio on safari
-    height: calc(60rem / 3.8343558282);
-
-    @media screen and (max-width: 60rem) {
-      height: calc(100vw / 3.8343558282);
-    }
-  }
-}
-
-#sponsors {
-  #sponsor-cloud {
-    display: flex;
-    position: relative;
-    width: 60rem;
-    height: calc(60rem / 1.6);
-    justify-content: center;
-    align-items: center;
-
-    #sponsor-pitch {
-      max-width: 48rem;
-      z-index: 1;
-    }
-
-    #past-sponsors {
-      position: absolute;
-      background-image: linear-gradient(
-          to right,
-          rgba(0, 0, 0, 1) 0%,
-          rgba(0, 0, 0, 0.3) 20%,
-          rgba(0, 0, 0, 0) 50%,
-          rgba(0, 0, 0, 0.3) 80%,
-          rgba(0, 0, 0, 1) 100%
-        ),
-        linear-gradient(
-          to bottom,
-          rgba(0, 0, 0, 0.3) 0%,
-          rgba(0, 0, 0, 0) 50%,
-          rgba(0, 0, 0, 0.3) 100%
-        ),
-        url("../assets/images/f19-sponsors-placeholder-bw-full.png");
-      background-position: center center;
-      background-size: cover;
-      background-repeat: no-repeat;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      opacity: 0.375;
-      z-index: -1;
-    }
-  }
-}
-
-#partners img {
-  max-width: 100%;
-}
-
-footer {
-  .background {
-    height: 20rem;
-  }
-
-  .footer-content {
-    z-index: 2;
-  }
-}
-
-//collapse
+/** Collapsible **/
 .collapsible {
   background-color: rgb(0, 0, 0);
   color: white;
@@ -566,24 +217,4 @@ footer {
 
 .answer {
   font-size: 18px;
-}
-
-.team-image {
-  width: 180px;
-  height: auto;
-}
-
-.team-member {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.team-member-title {
-  font-size: 15px;
-}
-
-.center-contet {
-  text-align: center;
-  margin: auto;
 }
