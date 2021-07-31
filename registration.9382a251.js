@@ -117,74 +117,230 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
-var bundleURL = null;
+})({"src/registration.js":[function(require,module,exports) {
+//Opening and closing of modal
+var modal = document.getElementById("regModal");
+var registerBtn = document.getElementById("registerBtn");
+var closeBtn = document.getElementById("regCloseBtn");
+var submitBtn = document.getElementById("submitBtn");
+var tabs = document.querySelectorAll(".tab");
+var noticeModal = document.querySelector("regNoticeModal");
+var currentTab = 0;
+registerBtn.addEventListener("click", function () {
+  console.log(noticeModal);
+  noticeModal.style.display = "block";
+  console.log("click");
+});
+registerBtn.addEventListener("click", openModal);
+closeBtn.addEventListener("click", closeModal);
+window.addEventListener("click", closeModal); // submitBtn.addEventListener("click", closeModal);
+//styles select fields
 
-function getBundleURLCached() {
-  if (!bundleURL) {
-    bundleURL = getBundleURL();
-  }
-
-  return bundleURL;
-}
-
-function getBundleURL() {
-  // Attempt to find the URL of the current script and use that as the base URL
-  try {
-    throw new Error();
-  } catch (err) {
-    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
-
-    if (matches) {
-      return getBaseURL(matches[0]);
+var selectArray = document.querySelectorAll(".form-control.select");
+selectArray.forEach(function (item) {
+  item.addEventListener("click", function () {
+    if (item.value != "") {
+      item.style.color = "rgb(255,255,255)";
     }
+  });
+}); //Other option functionality.
+
+var genderGroup = document.querySelector("#Gender");
+var GenderOptions = genderGroup.querySelectorAll(".form-check-label");
+var otherOptionText = genderGroup.querySelector("#other-text-input");
+GenderOptions.forEach(function (item) {
+  item.addEventListener("click", function () {
+    if (item.id == "other-label") {
+      otherOptionText.style.display = "inline";
+      otherOptionText.focus();
+    } else {
+      otherOptionText.style.display = "none";
+    }
+  });
+});
+
+function resetSelectFields() {
+  selectArray.forEach(function (item) {
+    item.style.color = "rgba(255,255,255,0.5)";
+  });
+} //show resume name
+
+
+var resume = document.getElementById("resume");
+resume.addEventListener("change", function (e) {
+  document.getElementById("resumeName").innerHTML = e.target.files[0].name;
+}); //open modal
+
+function openModal() {
+  modal.style.display = "block";
+  showTab(currentTab);
+}
+
+function closeModal(e) {
+  if (e.target == modal || e.target == closeBtn) {
+    modal.style.display = "none";
+    document.getElementById("regForm").reset();
+    resetSelectFields(); //reset Tabs
+
+    currentTab = 0;
+    tabs.forEach(function (tab) {
+      tab.style.display = "none";
+    }); //reset Resume Selection
+
+    document.getElementById("resumeName").innerHTML = "";
+  }
+}
+
+var nextBtn = document.querySelector("#nextBtn");
+var prevBtn = document.querySelector("#prevBtn");
+nextBtn.addEventListener("click", nextTab);
+prevBtn.addEventListener("click", prevTab);
+
+function showTab(n) {
+  tabs[n].style.display = "block"; //show or hide previous button
+
+  if (n == 0) {
+    //first tab
+    prevBtn.style.display = "none";
+    nextBtn.style.display = "block";
+    submitBtn.style.display = "none";
   }
 
-  return '/';
-}
-
-function getBaseURL(url) {
-  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)\/[^/]+$/, '$1') + '/';
-}
-
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-},{}],"node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
-var bundle = require('./bundle-url');
-
-function updateLink(link) {
-  var newLink = link.cloneNode();
-
-  newLink.onload = function () {
-    link.remove();
-  };
-
-  newLink.href = link.href.split('?')[0] + '?' + Date.now();
-  link.parentNode.insertBefore(newLink, link.nextSibling);
-}
-
-var cssTimeout = null;
-
-function reloadCSS() {
-  if (cssTimeout) {
-    return;
+  if (n > 0 && n < tabs.length) {
+    //anything in between
+    prevBtn.style.display = "block";
+    nextBtn.style.display = "block";
+    submitBtn.style.display = "none";
   }
 
-  cssTimeout = setTimeout(function () {
-    var links = document.querySelectorAll('link[rel="stylesheet"]');
+  if (n >= tabs.length - 1) {
+    //last tab
+    nextBtn.style.display = "none";
+    submitBtn.style.display = "block";
+  }
+}
 
-    for (var i = 0; i < links.length; i++) {
-      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
-        updateLink(links[i]);
+function nextTab() {
+  //validate input
+  if (currentTab == 0) {
+    var passedNameTest = validateName();
+    var passedPhoneNumberTest = validatePhoneNumber();
+    var passedEmailTest = validateEmail();
+    var nameErrorMessage = document.getElementById("nameErrorMessage");
+    var emailErrorMessage = document.getElementById("emailErrorMessage");
+    var phoneNumberErrorMessage = document.getElementById("phoneNumberErrorMessage");
+
+    if (!passedNameTest) {
+      nameErrorMessage.style.display = "block";
+    } else {
+      nameErrorMessage.style.display = "none";
+    }
+
+    if (!passedEmailTest) {
+      emailErrorMessage.style.display = "block";
+    } else {
+      emailErrorMessage.style.display = "none";
+    }
+
+    if (!passedPhoneNumberTest) {
+      phoneNumberErrorMessage.style.display = "block";
+    } else {
+      phoneNumberErrorMessage.style.display = "block";
+    }
+
+    if (passedNameTest && passedEmailTest && passedPhoneNumberTest) {
+      nameErrorMessage.style.display = "none";
+      emailErrorMessage.style.display = "none";
+      phoneNumberErrorMessage.style.display = "none";
+      tabs[currentTab].style.display = "none";
+      currentTab = currentTab + 1;
+      showTab(currentTab);
+    }
+  } //checks if correct age is entered.
+  else if (currentTab == 1) {
+      var passedAgeTest = validateAge();
+
+      var _phoneNumberErrorMessage = document.getElementById("ageErrorMessage");
+
+      if (!passedAgeTest) {
+        ageErrorMessage.style.display = "block";
+      } else {
+        ageErrorMessage.style.display = "none";
+        tabs[currentTab].style.display = "none";
+        currentTab = currentTab + 1;
+        showTab(currentTab);
       }
+    } else {
+      tabs[currentTab].style.display = "none";
+      currentTab = currentTab + 1;
+      showTab(currentTab);
     }
-
-    cssTimeout = null;
-  }, 50);
 }
 
-module.exports = reloadCSS;
-},{"./bundle-url":"node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+function prevTab() {
+  tabs[currentTab].style.display = "none";
+  currentTab = currentTab - 1;
+  showTab(currentTab);
+} //Form validation
+//validate email field.
+
+
+function validateEmail() {
+  var emailValue = document.getElementById("email").value;
+  var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(String(emailValue).toLowerCase());
+} //validate Name field.
+
+
+function validateName() {
+  var nameValue = document.getElementById("name").value;
+
+  if (nameValue == "") {
+    return false;
+  }
+
+  return true;
+} //validate Phone Number field.
+
+
+function validatePhoneNumber() {
+  var phoneNumberValue = document.getElementById("phoneNumber").value;
+  var re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
+  return re.test(String(phoneNumberValue));
+}
+
+function validateAge() {
+  var ageValue = document.getElementById("age").value;
+  var re = /^[1-9]?[0-9]{1}$|^100$/;
+  return re.test(String(ageValue));
+} //send post request to the server.
+
+
+registrationForm = document.getElementById("regForm");
+submitBtn.addEventListener("click", function (e) {
+  e.preventDefault();
+  var formData = new FormData(registrationForm);
+  fetch("https://radiant-tundra-50768.herokuapp.com/", {
+    method: "POST",
+    body: formData,
+    mode: "no-cors",
+    headers: {
+      "Content-Type": "application/json"
+    }
+  }).then(function (response) {
+    return response.json();
+  }).then(function (data) {
+    console.log("Success:", data);
+  }).catch(function (error) {
+    console.log("Error:", error);
+  });
+  modal.style.display = "none";
+  document.getElementById("confirm").style.display = "block";
+  setTimeout(function () {
+    document.getElementById("confirm").style.display = "none";
+  }, 2900);
+});
+},{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -212,7 +368,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62878" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58242" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -387,5 +543,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js"], null)
-//# sourceMappingURL=/index.js.map
+},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","src/registration.js"], null)
+//# sourceMappingURL=/registration.9382a251.js.map
