@@ -6563,6 +6563,32 @@ footer a, footer a:hover, footer a:focus {
   z-index: 0;
 }
 
+.sponsor-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 30px;
+}
+.sponsor-grid .sponsor-in-grid {
+  margin: 20px;
+  position: relative;
+  text-align: center;
+}
+
+.sponsor1 {
+  width: 55%;
+}
+
+@media (max-width: 767px) {
+  .sponsor-grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 15px;
+  }
+}
+@media (max-width: 767px) {
+  .sponsor1 {
+    width: 95%;
+  }
+}
 .team-members {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
