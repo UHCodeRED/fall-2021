@@ -58,6 +58,10 @@
 }
 
 .sponsor1{
+  width: 60%;
+}
+
+.sponsor2{
   width: 55%;
 }
 
@@ -71,5 +75,9 @@
 @media (max-width: 767px) {
   .sponsor1 {
     width:95%
+  }
+
+  .sponsor2{
+    width:90%
   }
 }
