@@ -6499,6 +6499,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 #landing .landing-content .event-info img {
   max-width: 100%;
+  padding-bottom: 0.5rem;
 }
 #landing .landing-content .event-info .nls {
   margin-right: -0.25rem;
@@ -6575,6 +6576,10 @@ footer a, footer a:hover, footer a:focus {
 }
 
 .sponsor1 {
+  width: 60%;
+}
+
+.sponsor2 {
   width: 55%;
 }
 
@@ -6587,6 +6592,10 @@ footer a, footer a:hover, footer a:focus {
 @media (max-width: 767px) {
   .sponsor1 {
     width: 95%;
+  }
+
+  .sponsor2 {
+    width: 90%;
   }
 }
 .team-members {
