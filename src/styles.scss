@@ -218,3 +218,53 @@ img {
 .answer {
   font-size: 18px;
 }
+
+.scheduleList{
+  list-style-type: none;
+  .Saturday{
+    text-align: left;
+    display: flex;
+    padding-left: 0%;
+    //p{
+      //display: inline;
+    //}
+  }
+
+  .Sunday{
+    text-align: left;
+    display: flex;
+    padding-right: 0%;
+  }
+  .p1{
+    font-weight: bold;
+    flex:50%
+  }
+  .p2{
+    flex:50%
+  }
+}
+
+.columns{
+  max-width: 60rem;
+  padding: 0 2rem !important;
+  display: flex;
+}
+
+.columnBox{
+  width: 50%;
+  flex: 1 1 auto;
+  text-align: left;
+}
+
+@media (max-width: 767px) {
+  .columns {
+    max-width: 100%;
+    display: inline;
+  }
+  .columnBox{
+    width: 100%;
+  }
+  .Sunday{
+    padding-left: 0%;
+  }
+}
