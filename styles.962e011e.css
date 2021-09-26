@@ -6836,4 +6836,52 @@ img {
   font-size: 18px;
 }
 
+.scheduleList {
+  list-style-type: none;
+}
+.scheduleList .Saturday {
+  text-align: left;
+  display: flex;
+  padding-left: 0%;
+}
+.scheduleList .Sunday {
+  text-align: left;
+  display: flex;
+  padding-right: 0%;
+}
+.scheduleList .p1 {
+  font-weight: bold;
+  flex: 50%;
+}
+.scheduleList .p2 {
+  flex: 50%;
+}
+
+.columns {
+  max-width: 60rem;
+  padding: 0 2rem !important;
+  display: flex;
+}
+
+.columnBox {
+  width: 50%;
+  flex: 1 1 auto;
+  text-align: left;
+}
+
+@media (max-width: 767px) {
+  .columns {
+    max-width: 100%;
+    display: inline;
+  }
+
+  .columnBox {
+    width: 100%;
+  }
+
+  .Sunday {
+    padding-left: 0%;
+  }
+}
+
 /*# sourceMappingURL=/styles.962e011e.css.map */
