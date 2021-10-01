@@ -47,6 +47,19 @@
   max-height: 100vh;
   width: 100%;
 
+  .timer{
+    display: flex;
+    height: 6%;
+    align-items: center;
+    background-color: red;
+    color: white;
+
+    #countdown{
+      display: flex;
+      align-content: center;
+    }
+  }
+
   .landing-content {
     display: flex;
     height: 100%;

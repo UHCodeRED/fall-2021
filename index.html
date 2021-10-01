@@ -18,7 +18,34 @@
 		<img src="https://s3.amazonaws.com/logged-assets/trust-badge/2021/mlh-trust-badge-2021-gray.svg"
 			alt="Major League Hacking 2021 Hackathon Season" style="width:100%">
 	</a> -->
+
 	<div id="landing">
+		<div class="timer">	
+			<p id="countdown">
+				<script>
+				var targetDateTime = new Date("Oct 3, 2021 12:00:00").getTime();
+				
+				var x = setInterval(function() {
+				var current = new Date().getTime();
+				
+				var difference = targetDateTime - current;
+		
+				var days = Math.floor(difference / (1000 * 60 * 60 * 24));
+				var hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+				var minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+				var seconds = Math.floor((difference % (1000 * 60)) / 1000);
+				
+				document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s remaining";
+				
+				if (difference < 0) {
+					clearInterval(x);
+					document.getElementById("countdown").innerHTML = "SUBMISSIONS CLOSED";
+				}
+				}, 1000);
+				</script>
+			</p>
+		</div>
+
 		<div class="landing-content">
 			<div class="event-info">
 				<img id="logo" src="/assets/coderedByConocoLogo.png" loading="eager" alt="CodeRED Artemis Logo" />
@@ -39,8 +66,8 @@
 					</strong>
 				</div>
 				-->
-				<a href="https://forms.gle/XHbVT9HvUd4ke3RS8" class="arrow-btn w-100 mt-2 m" 
-					target="_blank"><span class="nls">Register Here</span></a> 		<!--Deadline ends on Sept 19-->
+				<!-- <a href="https://forms.gle/XHbVT9HvUd4ke3RS8" class="arrow-btn w-100 mt-2 m" 
+					target="_blank"><span class="nls">Registration Closed</span></a> 		Deadline ends on Sept 19 -->
 				<a href="https://devpost.com/hackathons?search=codered" class="arrow-btn w-100 mt-2 mb-2"
 					target="_blank"><span class="nls">Past Events</span></a>
 				<a href="#sponsors" class="arrow-btn w-100 mb-2 m"><span class="nls">Sponsors</span></a>
@@ -185,11 +212,11 @@
 					</ul>
 					<ul class="Saturday mb-1">
 						<p class="p1">4:15 PM - 5:15 PM</p>
-						<p class="p2">HCSS Workshop</p>
+						<p class="p2">Visualizing data with HCSS</p>
 					</ul>
 					<ul class="Saturday mb-1">
 						<p class="p1">5:30 PM - 6:00 PM</p>
-						<p class="p2">ConocoPhillips Workshop</p>
+						<p class="p2">Resume Review with ConocoPhillips</p>
 					</ul>
 					<ul class="Saturday mb-1">
 						<p class="p1">6:30 PM - 7:30 PM</p>
