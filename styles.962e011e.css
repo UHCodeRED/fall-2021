@@ -6480,6 +6480,17 @@ a.text-dark:hover, a.text-dark:focus {
   max-height: 100vh;
   width: 100%;
 }
+#landing .timer {
+  display: flex;
+  height: 6%;
+  align-items: center;
+  background-color: red;
+  color: white;
+}
+#landing .timer #countdown {
+  display: flex;
+  align-content: center;
+}
 #landing .landing-content {
   display: flex;
   height: 100%;
