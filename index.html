@@ -20,32 +20,6 @@
 	</a> -->
 
 	<div id="landing">
-		<div class="timer">	
-			<p id="countdown">
-				<script>
-				var targetDateTime = new Date("Oct 3, 2021 12:00:00").getTime();
-				
-				var x = setInterval(function() {
-				var current = new Date().getTime();
-				
-				var difference = targetDateTime - current;
-		
-				var days = Math.floor(difference / (1000 * 60 * 60 * 24));
-				var hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-				var minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-				var seconds = Math.floor((difference % (1000 * 60)) / 1000);
-				
-				document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s remaining";
-				
-				if (difference < 0) {
-					clearInterval(x);
-					document.getElementById("countdown").innerHTML = "SUBMISSIONS CLOSED";
-				}
-				}, 1000);
-				</script>
-			</p>
-		</div>
-
 		<div class="landing-content">
 			<div class="event-info">
 				<img id="logo" src="/assets/coderedByConocoLogo.png" loading="eager" alt="CodeRED Artemis Logo" />
