@@ -12,7 +12,7 @@
 
 <body>
 	<div id="landing">
-		<!-- <div class="timer">	
+		<div class="timer">	
 			<p id="countdown">
 				<script>
 				var targetDateTime = new Date("Oct 3, 2021 12:00:00").getTime();
@@ -27,16 +27,16 @@
 				var minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
 				var seconds = Math.floor((difference % (1000 * 60)) / 1000);
 				
-				document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s remaining";
+				document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s REMAINING";
 				
 				if (difference < 0) {
 					clearInterval(x);
-					document.getElementById("countdown").innerHTML = "SUBMISSIONS CLOSED";
+					document.getElementById("countdown").innerHTML = "<div>CODERED ARTEMIS HAS ENDED. CHECK OUT THE EVENT <a href='https://codered-artemis-uh.devpost.com/?ref_feature=challenge&ref_medium=discover'>HERE</a></div>";
 				}
 				}, 1000);
 				</script>
 			</p>
-		</div> -->
+		</div>
 
 		<div class="landing-content">
 			<div class="event-info">

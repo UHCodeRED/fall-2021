@@ -50,13 +50,22 @@
   .timer{
     display: flex;
     height: 6%;
+    justify-content: center;
     align-items: center;
+    flex-direction: row;
     background-color: red;
     color: white;
 
     #countdown{
       display: flex;
       align-content: center;
+      text-align: center;
+      font-weight: bold
+    }
+
+    a {
+      color: white;
+      text-decoration:underline;
     }
   }
 
