@@ -11,15 +11,33 @@
 </head>
 
 <body>
-	<!-- <a id="mlh-trust-badge"
-		style="display:none;max-width:100px;min-width:60px;position:fixed;right:50px;top:0;width:10%;z-index:10000"
-		href="https://mlh.io/seasons/na-2021/events?utm_source=na-hackathon&amp;utm_medium=TrustBadge&amp;utm_campaign=2021-season&amp;utm_content=white"
-		target="_blank">
-		<img src="https://s3.amazonaws.com/logged-assets/trust-badge/2021/mlh-trust-badge-2021-gray.svg"
-			alt="Major League Hacking 2021 Hackathon Season" style="width:100%">
-	</a> -->
-
 	<div id="landing">
+		<!-- <div class="timer">	
+			<p id="countdown">
+				<script>
+				var targetDateTime = new Date("Oct 3, 2021 12:00:00").getTime();
+				
+				var x = setInterval(function() {
+				var current = new Date().getTime();
+				
+				var difference = targetDateTime - current;
+		
+				var days = Math.floor(difference / (1000 * 60 * 60 * 24));
+				var hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+				var minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+				var seconds = Math.floor((difference % (1000 * 60)) / 1000);
+				
+				document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s remaining";
+				
+				if (difference < 0) {
+					clearInterval(x);
+					document.getElementById("countdown").innerHTML = "SUBMISSIONS CLOSED";
+				}
+				}, 1000);
+				</script>
+			</p>
+		</div> -->
+
 		<div class="landing-content">
 			<div class="event-info">
 				<img id="logo" src="/assets/coderedByConocoLogo.png" loading="eager" alt="CodeRED Artemis Logo" />
@@ -96,7 +114,7 @@
 			<div class="collapsible">When is the last day to register?</div>
 			<div class="content">
 				<p>
-					The registration deadline has been extended until September 29, 2021.
+					Registrations have closed, please check back next year for our next event.
 				</p>
 			</div>
 			<div class="collapsible">What if I am not experienced?</div>
@@ -150,7 +168,7 @@
 
 	<br>
 	
-	<div id="schedule" class="container">
+	<!-- <div id="schedule" class="container">
 		<h2 class="pt-4 pb-0">
 			<span class="nls">Schedule</span>
 		</h2>
@@ -234,13 +252,13 @@
 				</li>
 			</div>
 		</div>
-	</div>
+	</div> -->
 
 	<br>
 	
 	<div id="sponsors" class="container">
 		<div class="row text-center">
-			<h2 class="pt-4 pb-0"><span class="nls">Sponsorship</span></h2>
+			<h2 class="pt-4 pb-0"><span class="nls">Past Sponsors</span></h2>
 
 			<div class="container mt-2 mb-3">
 				<h3>
@@ -294,7 +312,7 @@
 				</div>
 			</div>
 	 
-			<!-- <div id="sponsor-cloud" class="mt-4 w-100 text-center">
+			<div id="sponsor-cloud" class="mt-4 w-100 text-center">
 				<div id="sponsor-pitch" class="px-5">
 					<h3>
 						<span class="nls">
@@ -317,7 +335,7 @@
 				</div>
 				<div id="past-sponsors" alt="Past CodeRED Sponsors like Microsoft, Google, United, HCSS, and more">
 				</div>
-			</div>			 -->
+			</div>			
 		</div>
 	</div>
 
