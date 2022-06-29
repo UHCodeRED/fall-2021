@@ -1,2 +1,2 @@
-# Fall 2021
-CodeRed Artemis website
+# Fall 2022
+CodeRed Odyssey Website
