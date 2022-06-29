@@ -2,7 +2,7 @@
 <html lang="en-US">
 
 <head>
-	<title>CodeRED Artemis Fall 2021 - Houston's Premier Hackathon</title>
+	<title>CodeRED Odyssey Fall 2022 - Houston's Premier Hackathon</title>
 	<meta charset="UTF-8" />
 	<link rel="icon" href="favicon.png" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -12,43 +12,46 @@
 
 <body>
 	<div id="landing">
-		<div class="timer">	
+		<div class="timer pt-3">
 			<p id="countdown">
 				<script>
-				var targetDateTime = new Date("Oct 3, 2021 12:00:00").getTime();
-				
+				var targetDateTime = new Date("Oct 29, 2022 12:00:00").getTime();
+
 				var x = setInterval(function() {
 				var current = new Date().getTime();
-				
+
 				var difference = targetDateTime - current;
-		
+
 				var days = Math.floor(difference / (1000 * 60 * 60 * 24));
 				var hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 				var minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
 				var seconds = Math.floor((difference % (1000 * 60)) / 1000);
-				
+
 				document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s REMAINING";
-				
+
 				if (difference < 0) {
 					clearInterval(x);
-					document.getElementById("countdown").innerHTML = "<div>CODERED ARTEMIS HAS ENDED. CHECK OUT THE EVENT <a href='https://codered-artemis-uh.devpost.com/?ref_feature=challenge&ref_medium=discover'>HERE</a></div>";
+					document.getElementById("countdown").innerHTML = "<div>CHECK OUT OUR PREVIOUS EVENT (2021 CODERED ARTEMIS) <a href='https://codered-artemis-uh.devpost.com/?ref_feature=challenge&ref_medium=discover'>HERE</a></div>";
 				}
 				}, 1000);
 				</script>
 			</p>
 		</div>
 
+
+
 		<div class="landing-content">
 			<div class="event-info">
-				<img id="logo" src="/assets/coderedByConocoLogo.png" loading="eager" alt="CodeRED Artemis Logo" />
+				<a id="mlh-trust-badge" style="display:block;max-width:100px;min-width:60px;position:fixed;right:50px;top:0;width:10%;z-index:10000" href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2023-season&utm_content=white" target="_blank"><img src="https://s3.amazonaws.com/logged-assets/trust-badge/2023/mlh-trust-badge-2023-white.svg" alt="Major League Hacking 2023 Hackathon Season" style="width:100%"></a>
+				<img id="logo" src="/assets/codered-odyssey.png" class ="img-fluid" loading="eager" alt="CodeRED Odyssey Logo"/>
 				<div class="info-line py-1">
 					<div class="float-left event-year decode-in p-0">Houston.TX.USA</div>
-					<div class="float-right column event-location decode-in p-0">2021</div>
+					<div class="float-right column event-location decode-in p-0">2022</div>
 				</div>
 				<div class="display-none">&nbsp;</div>
 				<div class="coming-soon">
 					<strong>
-						<span class="nls">Join us <br>virtually on <br> Oct 2nd - 3rd</span>
+						<span class="nls">Join us on<br> Oct 29th - 30th <br> 2022</span>
 					</strong>
 				</div>
 				<!--
@@ -58,7 +61,7 @@
 					</strong>
 				</div>
 				-->
-				<!-- <a href="https://forms.gle/XHbVT9HvUd4ke3RS8" class="arrow-btn w-100 mt-2 m" 
+				<!-- <a href="https://forms.gle/XHbVT9HvUd4ke3RS8" class="arrow-btn w-100 mt-2 m"
 					target="_blank"><span class="nls">Registration Closed</span></a> 		Deadline ends on Sept 19 -->
 				<a href="https://devpost.com/hackathons?search=codered" class="arrow-btn w-100 mt-2 mb-2"
 					target="_blank"><span class="nls">Past Events</span></a>
@@ -92,13 +95,10 @@
 			</div>
 			<div class="answer">
 				<p>
-					CodeRED is a <strong>24 hours hackathon</strong>, organized by CougarCS, the largest computer science organization at
-					the University of Houston. It's an event for people to come together and innovate by pushing their limits to create
-					something amazing!
+					CodeRED is a <strong>24 hours hackathon</strong> event organized by CougarCS, the largest student-run computer science organization at the University of Houston. It's an event for people to come together and innovate by pushing their limits to create something amazing!
 				</p>
 				<p>
-					Want to learn something new? Come join us at CodeRED Artemis to solve real-life problems, explore new possibilities, and
-					shoot for the moon.
+					Want to learn something new, network with like-minded computer scientists, and push the boundaries of your skill? Come join us at CodeRED Odyssey to solve real-life problems, explore new possibilities, and shoot for the stars!
 				</p>
 			</div>
 
@@ -108,13 +108,26 @@
 			<div class="collapsible">Who can attend CodeRED?</div>
 			<div class="content">
 				<p>
-					All students and recent graduates are welcome.
+					All students and recent graduates are welcome. Since we are an MLH member event, participants must also accept the <a href = "https://static.mlh.io/docs/mlh-code-of-conduct.pdf"> <span class="text-primary">MLH Code of Conduct.</span></a>
 				</p>
 			</div>
-			<div class="collapsible">When is the last day to register?</div>
+			<div class="collapsible">How long is CodeRED?</div>
 			<div class="content">
 				<p>
-					Registrations have closed, please check back next year for our next event.
+					CodeRED Odyssey is 24-hours long. It's scheduled to be on October 29th - October 30th, 2022.
+				</p>
+			</div>
+			<div class="collapsible">When are registrations rolling out for CodeRED Odyssey?</div>
+			<div class="content">
+				<p>
+					Registrations are going to be live during the first week of July, so stay tuned!
+				</p>
+			</div>
+			<div class="collapsible">What do I need to bring?</div>
+			<div class="content">
+				<p>
+					Please bring a Student/Legal ID so our team can check you in during the event.
+					You will also need to bring your own computer. It is also recommended to bring a Connector Strip if you want!
 				</p>
 			</div>
 			<div class="collapsible">What if I am not experienced?</div>
@@ -146,13 +159,7 @@
 			<div class="collapsible">Is there swag?</div>
 			<div class="content">
 				<p>
-					We know Hackathons and swag go hand in hand like peanut butter and jelly so, of course there will be swag!!!
-				</p>
-			</div>
-			<div class="collapsible">Which is older - the moon or the sun?</div>
-			<div class="content">
-				<p>
-					The moon duh... it can stay out all night. (Okay, we'll stop with the Artemis jokes now.)
+					We know Hackathons and swag go hand in hand like peanut butter and jelly so, of course there will be swag!
 				</p>
 			</div>
 			<div class="collapsible">Got more questions?</div>
@@ -160,23 +167,23 @@
 				<p>
 					Feel free to reach out to us at <a href="mailto: hackathon@cougarcs.com" target="_blank"
 						rel="nofollow">hackathon@cougarcs.com</a>
-					or on Twitter <a href="https://twitter.com/CodeRED_HOU" target="_blank" rel="nofollow">@CodeRED_HOU</a>
+					or on <a href="https://www.instagram.com/codered_hou/" target="_blank" rel="nofollow">Instagram</a>/<a href="https://twitter.com/CodeRED_HOU" target="_blank" rel="nofollow">Twitter</a>
 				</p>
 			</div>
 		</div>
 	</div>
 
 	<br>
-	
+
 	<!-- <div id="schedule" class="container">
 		<h2 class="pt-4 pb-0">
 			<span class="nls">Schedule</span>
 		</h2>
-		
+
 		<div class="columns text-center pb-3" id="Saturday">
 			<div class="columnBox">
 				<h3 class="text-primary mt-2">Saturday</h3>
-				
+
 				<li class="scheduleList">
 					<ul class="Saturday mt-3 mb-1">
 						<p class="p1">9:00 AM - 11:00 AM</p>
@@ -224,10 +231,10 @@
 					</ul>
 				</li>
 			</div>
-  
+
 			<div class="columnBox">
 				<h3 class="text-primary mt-2">Sunday</h3>
-			
+
 				<li class="scheduleList">
 					<ul class="Sunday mt-3 mb-1">
 						<p class="p1">2:00 AM - 3:00 AM</p>
@@ -255,7 +262,7 @@
 	</div> -->
 
 	<br>
-	
+
 	<div id="sponsors" class="container">
 		<div class="row text-center">
 			<h2 class="pt-4 pb-0"><span class="nls">Past Sponsors</span></h2>
@@ -267,7 +274,7 @@
 						Code<span class="text-primary">RED</span> outstanding.
 					</span>
 				</h3>
-	
+
 				<div class="w-100" style="margin-top: 4rem;">
 					<a href="https://www.conocophillips.com/" target="_blank">
 						<img
@@ -276,7 +283,7 @@
 							class="sponsor1"
 						/>
 					</a>
-	
+
 				</div>
 
 				<div class="w-100" style="margin-top: 2rem;">
@@ -299,7 +306,7 @@
 							/>
 						</a>
 					</div>
-	
+
 					<div class="sponsor-in-grid">
 						<a href="https://www.echoar.xyz/?gclid=CjwKCAjwpMOIBhBAEiwAy5M6YNvxdy-cPGM01gFH4pmxWMVmwSlKgwuw9MDCbZDT5p9D47JDHX96OhoCxBwQAvD_BwE" target="_blank">
 							<img
@@ -311,7 +318,7 @@
 					</div>
 				</div>
 			</div>
-	 
+
 			<div id="sponsor-cloud" class="mt-4 w-100 text-center">
 				<div id="sponsor-pitch" class="px-5">
 					<h3>
@@ -335,7 +342,7 @@
 				</div>
 				<div id="past-sponsors" alt="Past CodeRED Sponsors like Microsoft, Google, United, HCSS, and more">
 				</div>
-			</div>			
+			</div>
 		</div>
 	</div>
 
@@ -345,114 +352,178 @@
 		</h2>
 		<div class="mt-4 mb-2 team-members">
 			<div class="team-member">
-				<img src="assets/team/Shubha Joshi.jpg" class="img-fluid team-image" />
-				<p class="mt-2 mb-0 person-name">Shubha Joshi</p>
-				<p class="team-member-title mb-1">Director of CodeRED</p>
-				<a href="https://www.linkedin.com/in/shubha-joshi-03441a194" target="_blank">
-					<img src="assets/icons/linkedin.png" width="15" />
-				</a>
-			</div>
-			<div class="team-member">
-				<img src="assets/team/Reeba Sayed.jpg" class="img-fluid team-image" />
-				<p class="mt-2 mb-0 person-name">Reeba Sayed</p>
-				<p class="team-member-title mb-1">Webmaster</p>
-				<a href="https://www.linkedin.com/in/reeba-sayed" target="_blank">
-					<img src="assets/icons/linkedin.png" width="15" />
-				</a>
-			</div>
-			<div class="team-member">
-				<img src="assets/team/Ali Zain Charolia.jpg" class="img-fluid team-image" />
+				<img src="assets/team/Ali Zain Bitmoji.png" class="img-fluid team-image" />
 				<p class="mt-2 mb-0 person-name">Ali Zain Charolia</p>
-				<p class="team-member-title mb-1">Communications Director</p>
-				<a href="https://www.linkedin.com/in/alizaincharolia" target="_blank">
+				<p class="team-member-title mb-1">Director</p>
+				<a href="https://www.linkedin.com/in/alizaincharolia/" target="_blank">
 					<img src="assets/icons/linkedin.png" width="15" />
 				</a>
 			</div>
 			<div class="team-member">
-				<img src="assets/team/Sergio Robledo.jpg" class="img-fluid team-image" />
-				<p class="mt-2 mb-0 person-name">Sergio Robledo</p>
-				<p class="team-member-title mb-1">Web Officer</p>
-				<a href="https://www.linkedin.com/in/sergiomrobledo" target="_blank">
+				<img src="assets/team/Aman Bitmoji.png" class="img-fluid team-image" />
+				<p class="mt-2 mb-0 person-name">Aman Surani</p>
+				<p class="team-member-title mb-1">Corporate Relations Director</p>
+				<a href="https://www.linkedin.com/in/amansurani/" target="_blank">
 					<img src="assets/icons/linkedin.png" width="15" />
 				</a>
 			</div>
 			<div class="team-member">
-				<img src="assets/team/Giselle Ruiz.jpg" class="img-fluid team-image" />
-				<p class="mt-2 mb-0 person-name">Giselle Ruiz</p>
-				<p class="team-member-title mb-1">Communications Officer</p>
-				<a href="https://www.linkedin.com/in/giselleruiz" target="_blank">
-					<img src="assets/icons/linkedin.png" width="15" />
-				</a>
-			</div>
-			<div class="team-member">
-				<img src="assets/team/Henry Hite.jpg" class="img-fluid team-image" />
-				<p class="mt-2 mb-0 person-name">Henry Hite</p>
-				<p class="team-member-title mb-1">Communications Officer</p>
-				<a href="https://www.linkedin.com/in/henry-hite-5a6837a9/" target="_blank">
-					<img src="assets/icons/linkedin.png" width="15" />
-				</a>
-			</div>
-			<div class="team-member">
-				<img src="assets/team/Lotanna Ohazuruike.jpg" class="img-fluid team-image" />
-				<p class="mt-2 mb-0 person-name">Lotanna Ohazuruike</p>
-				<p class="team-member-title mb-1">Public Relations Director</p>
-				<a href="https://www.linkedin.com/in/o-lotanna" target="_blank">
-					<img src="assets/icons/linkedin.png" width="15" />
-				</a>
-			</div>
-			<div class="team-member">
-				<img src="assets/team/Chetana Pitani.jpg" class="img-fluid team-image" />
-				<p class="mt-2 mb-0 person-name">Chetana Pitani</p>
-				<p class="team-member-title mb-1">Marketing Director</p>
-				<a href="https://www.linkedin.com/in/chetana-pitani-5979921b8" target="_blank">
-					<img src="assets/icons/linkedin.png" width="15" />
-				</a>
-			</div>
-			<div class="team-member">
-				<img src="assets/team/Muhammad Usman.jpg" class="img-fluid team-image" />
-				<p class="mt-2 mb-0 person-name">Muhammad Usman</p>
+				<img src="assets/team/Sana Bitmoji.jpg" class="img-fluid team-image" />
+				<p class="mt-2 mb-0 person-name">Sana Akbani</p>
 				<p class="team-member-title mb-1">Logistics Director</p>
-				<a href="https://www.linkedin.com/in/muhammad-u" target="_blank">
+				<a href="https://www.linkedin.com/in/sana-akbani/" target="_blank">
 					<img src="assets/icons/linkedin.png" width="15" />
 				</a>
 			</div>
 			<div class="team-member">
-				<img src="assets/team/Jeff Onyemachi.jpg" class="img-fluid team-image" />
-				<p class="mt-2 mb-0 person-name">Jeff Onyemachi</p>
+				<img src="assets/team/Giselle Bitmoji.png" class="img-fluid team-image" />
+				<p class="mt-2 mb-0 person-name">Giselle Ruiz</p>
+				<p class="team-member-title mb-1">Internal Affairs Director</p>
+				<a href="https://www.linkedin.com/in/giselleruiz/" target="_blank">
+					<img src="assets/icons/linkedin.png" width="15" />
+				</a>
+			</div>
+			<div class="team-member">
+				<img src="assets/team/Nathan Bitmoji.png" class="img-fluid team-image" />
+				<p class="mt-2 mb-0 person-name">Nathan Nguyen</p>
+				<p class="team-member-title mb-1">Marketing Director</p>
+				<a href="https://www.linkedin.com/in/nathvnguyen/" target="_blank">
+					<img src="assets/icons/linkedin.png" width="15" />
+				</a>
+			</div>
+			<div class="team-member">
+				<img src="assets/team/Ben Bitmoji.png" class="img-fluid team-image" />
+				<p class="mt-2 mb-0 person-name">Benjamin Key</p>
+				<p class="team-member-title mb-1">Corporate Relations Officer</p>
+				<a href="https://www.linkedin.com/in/benjamin-key-447197232/" target="_blank">
+					<img src="assets/icons/linkedin.png" width="15" />
+				</a>
+			</div>
+			<div class="team-member">
+				<img src="assets/team/Laney Bitmoji.png" class="img-fluid team-image" />
+				<p class="mt-2 mb-0 person-name">Laney Tran</p>
+				<p class="team-member-title mb-1">Corporate Relations Officer</p>
+				<a href="https://www.linkedin.com/in/laney-tran-a1579a151/" target="_blank">
+					<img src="assets/icons/linkedin.png" width="15" />
+				</a>
+			</div>
+			<div class="team-member">
+				<img src="assets/team/Rehman Bitmoji.png" class="img-fluid team-image" />
+				<p class="mt-2 mb-0 person-name">Rehman Essani</p>
+				<p class="team-member-title mb-1">Corporate Relations Officer</p>
+				<a href="https://www.linkedin.com/in/abdulrehmanessani/" target="_blank">
+					<img src="assets/icons/linkedin.png" width="15" />
+				</a>
+			</div>
+			<div class="team-member">
+				<img src="assets/team/Bryant Bitmoji.jpg" class="img-fluid team-image" />
+				<p class="mt-2 mb-0 person-name">Bryant Le</p>
 				<p class="team-member-title mb-1">Logistics Officer</p>
-				<a href="https://www.linkedin.com/company/coderedhou" target="_blank">
+				<a href="https://www.linkedin.com/in/bnle/" target="_blank">
 					<img src="assets/icons/linkedin.png" width="15" />
 				</a>
 			</div>
 			<div class="team-member">
-				<img src="assets/team/Duc Nguyen.jpg" class="img-fluid team-image" />
-				<p class="mt-2 mb-0 person-name">Duc Nguyen</p>
-				<p class="team-member-title mb-1">Public Relations Officer</p>
-				<a href="https://www.linkedin.com/in/duc-n-731b91170" target="_blank">
+				<img src="assets/team/Fiza Bitmoji.png" class="img-fluid team-image" />
+				<p class="mt-2 mb-0 person-name">Fiza Gubitra</p>
+				<p class="team-member-title mb-1">Logistics Officer</p>
+				<a href="https://www.linkedin.com/in/fiza-gubitra-b590a6241/" target="_blank">
 					<img src="assets/icons/linkedin.png" width="15" />
 				</a>
 			</div>
 			<div class="team-member">
-				<img src="assets/team/Janice Liang.jpg" class="img-fluid team-image" />
-				<p class="mt-2 mb-0 person-name">Janice Liang</p>
+				<img src="assets/team/Raunak Bitmoji.png" class="img-fluid team-image" />
+				<p class="mt-2 mb-0 person-name">Raunak Bose</p>
+				<p class="team-member-title mb-1">Logistics Officer</p>
+				<a href="https://www.linkedin.com/in/raunak-bose-56b0401a0/" target="_blank">
+					<img src="assets/icons/linkedin.png" width="15" />
+				</a>
+			</div>
+			<div class="team-member">
+				<img src="assets/team/Charity Bitmoji.png" class="img-fluid team-image" />
+				<p class="mt-2 mb-0 person-name">Charity Smith</p>
+				<p class="team-member-title mb-1">Logistics Officer</p>
+				<a href="https://www.linkedin.com" target="_blank">
+					<img src="assets/icons/linkedin.png" width="15" />
+				</a>
+			</div>
+			<div class="team-member">
+				<img src="assets/team/Saifur Bitmoji.jpg" class="img-fluid team-image" />
+				<p class="mt-2 mb-0 person-name">Saifur Rehman</p>
+				<p class="team-member-title mb-1">Logistics Officer</p>
+				<a href="https://www.linkedin.com/in/ssaifurrehmann/" target="_blank">
+					<img src="assets/icons/linkedin.png" width="15" />
+				</a>
+			</div>
+			<div class="team-member">
+				<img src="assets/team/Alivia Bitmoji.png" class="img-fluid team-image" />
+				<p class="mt-2 mb-0 person-name">Alivia Souvanna</p>
+				<p class="team-member-title mb-1">Internal Affairs Officer</p>
+				<a href="https://www.linkedin.com/in/aliviasouvanna/" target="_blank">
+					<img src="assets/icons/linkedin.png" width="15" />
+				</a>
+			</div>
+			<div class="team-member">
+				<img src="assets/team/Genesis Bitmoji.png" class="img-fluid team-image" />
+				<p class="mt-2 mb-0 person-name">Genesis Alvarez</p>
+				<p class="team-member-title mb-1">Internal Affairs Officer</p>
+				<a href="https://www.linkedin.com/in/genesis-alvarez/" target="_blank">
+					<img src="assets/icons/linkedin.png" width="15" />
+				</a>
+			</div>
+			<div class="team-member">
+				<img src="assets/team/Chris Bitmoji.png" class="img-fluid team-image" />
+				<p class="mt-2 mb-0 person-name">Christopher Turcios</p>
+				<p class="team-member-title mb-1">Communications Officer</p>
+				<a href="https://www.linkedin.com/in/christopher-turcios/" target="_blank">
+					<img src="assets/icons/linkedin.png" width="15" />
+				</a>
+			</div>
+			<div class="team-member">
+				<img src="assets/team/Maryam Bitmoji.png" class="img-fluid team-image" />
+				<p class="mt-2 mb-0 person-name">Maryam Naeem</p>
+				<p class="team-member-title mb-1">Communications Officer</p>
+				<a href="https://www.linkedin.com/in/maryam-naeem-1442b1209/" target="_blank">
+					<img src="assets/icons/linkedin.png" width="15" />
+				</a>
+			</div>
+			<div class="team-member">
+				<img src="assets/team/Mihir Bitmoji.png" class="img-fluid team-image" />
+				<p class="mt-2 mb-0 person-name">Mihir Sahu</p>
 				<p class="team-member-title mb-1">Marketing Officer</p>
-				<a href="https://www.linkedin.com/in/janice-liang-5b9130205" target="_blank">
+				<a href="https://www.linkedin.com/in/the-mihir-sahu/" target="_blank">
 					<img src="assets/icons/linkedin.png" width="15" />
 				</a>
 			</div>
 			<div class="team-member">
-				<img src="assets/team/Abdullah.jpg" class="img-fluid team-image" />
-				<p class="mt-2 mb-0 person-name">Abdullah Samma</p>
-				<p class="team-member-title mb-1">Logistics Officer</p>
-				<a href="https://www.linkedin.com/in/abdullah-samma-97a64a215/" target="_blank">
+				<img src="assets/team/Johnny Bitmoji.png" class="img-fluid team-image" />
+				<p class="mt-2 mb-0 person-name">Johnny Le</p>
+				<p class="team-member-title mb-1">Marketing Officer</p>
+				<a href="https://www.linkedin.com/in/le-johnny/" target="_blank">
 					<img src="assets/icons/linkedin.png" width="15" />
 				</a>
 			</div>
 			<div class="team-member">
-				<img src="assets/team/Jordan Miles.jpg" class="img-fluid team-image" />
-				<p class="mt-2 mb-0 person-name">Jordan Miles</p>
-				<p class="team-member-title mb-1">Logistics Officer</p>
-				<a href="https://www.linkedin.com/in/jordan-miles-92aa48199/" target="_blank">
+				<img src="assets/team/Marylin Bitmoji.jpg" class="img-fluid team-image" />
+				<p class="mt-2 mb-0 person-name">Marylin Rodriguez</p>
+				<p class="team-member-title mb-1">Marketing Officer</p>
+				<a href="https://www.linkedin.com/in/marylinrodriguez15/" target="_blank">
+					<img src="assets/icons/linkedin.png" width="15" />
+				</a>
+			</div>
+			<div class="team-member">
+				<img src="assets/team/Andrew Bitmoji.png" class="img-fluid team-image" />
+				<p class="mt-2 mb-0 person-name">Andrew Dieu</p>
+				<p class="team-member-title mb-1">Designer & Marketing Officer</p>
+				<a href="https://www.linkedin.com/in/andrewdieu/" target="_blank">
+					<img src="assets/icons/linkedin.png" width="15" />
+				</a>
+			</div>
+			<div class="team-member">
+				<img src="assets/team/Rabimba Bitmoji.png" class="img-fluid team-image" />
+				<p class="mt-2 mb-0 person-name">Rabimba Karanjai</p>
+				<p class="team-member-title mb-1">Administrative Officer</p>
+				<a href="https://www.linkedin.com/in/rabimba/" target="_blank">
 					<img src="assets/icons/linkedin.png" width="15" />
 				</a>
 			</div>
@@ -462,8 +533,8 @@
 	<div id="partners" class="container">
 		<div class="row text-center">
 			<!-- <h2 class="pt-4 pb-0"><span class="nls">Partners</span></h2> -->
-			<h2 class="pt-4 pb-0">
-				<span class="nls">Organized and supported by</span>
+			<h2 class="pt-4 pb-2">
+				<span class="nls">Organized by</span>
 			</h2>
 			<div class="w-100 col text-center">
 				<a href="https://cougarcs.com" target="_blank">
@@ -474,6 +545,49 @@
 			</div>
 		</div>
 	</div>
+
+	<div id="partners" class="container" style="margin-bottom: 45px;">
+		<div class="row text-center">
+			<!-- <h2 class="pt-4 pb-0"><span class="nls">Partners</span></h2> -->
+			<h2 class="pt-4 pb-4">
+				<span class="nls">Supported by</span>
+			</h2>
+			<div class="w-100 col text-center">
+				<a href="https://mlh.io" target="_blank">
+					<img src="/assets/partner-orgs/mlh-logo-color.png" loading="lazy" width="300" alt="CougarCS Logo" />
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<div id="partners" class="container">
+		<div class="row text-center">
+			<!-- <h2 class="pt-4 pb-0"><span class="nls">Partners</span></h2> -->
+			<h2 class="pt-4 pb-4">
+				<span class="nls">Partners</span>
+			</h2>
+			<div class="w-100 col text-center">
+				<a href="https://www.uh.edu/nsm/" target="_blank">
+					<img src="/assets/partner-orgs/UHNSM.png" loading="lazy" width="300" alt="CougarCS Logo" />
+				</a>
+			</div>
+		</div>
+	</div>
+	<div id="partners" class="container">
+		<div class="row text-center">
+		<div class="w-100 col text-center">
+			<a href="https://www.codecoogs.com/" target="_blank">
+				<img src="/assets/partner-orgs/codecoogs.png" loading="lazy" width="300" alt="CougarCS Logo" />
+			</a>
+		</div>
+		<div class="w-100 col text-center">
+			<a href="https://uhcougarettes.com/" target="_blank">
+				<img src="/assets/partner-orgs/cougarettes.png" loading="lazy" width="300" alt="CougarCS Logo" />
+			</a>
+		</div>
+	</div>
+	</div>
+
 	<footer class="text-center py-5">
 		<div class="footer-content">
 			<div style="margin-top: 50px;">
@@ -495,5 +609,4 @@
 	</footer>
 	<script src="src/scripts/index.js"></script>
 </body>
-
 </html>

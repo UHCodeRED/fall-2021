@@ -1,6 +1,7 @@
 #about {
   #album-cover {
     // hack to maintain aspect ratio on safari
+    object-fit: contain;
     height: calc(60rem / 3.8343558282);
 
     @media screen and (max-width: 60rem) {

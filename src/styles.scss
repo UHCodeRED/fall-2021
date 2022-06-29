@@ -8,7 +8,7 @@
 @import "./sass/team";
 @import "./sass/partner";
 
-/* 
+/*
 * - Base Styles
 * - Arrow Button
 * - Collapsible
@@ -37,10 +37,6 @@ h3 {
   .nls {
     margin-right: -0.25rem;
   }
-}
-
-img {
-  object-fit: contain;
 }
 
 @media not screen and (-webkit-min-device-pixel-ratio: 0) {
